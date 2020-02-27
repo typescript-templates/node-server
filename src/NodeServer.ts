@@ -5,30 +5,25 @@ import { ServerMethods } from "./ServerMethods";
 import compression from "compression";  // compresses requests
 import bodyParser from "body-parser";
 import lusca from "lusca";
-import flash from "express-flash";
 import session from "express-session";
 import { DefaultErrorHandler } from "./DefaultErrorHandler";
 
 export class NodeServer {
   private server: ServerMethods;
-
-  constructor() {
-  }
-
   get = (url: string, ...requestHandler: RequestHandler[]): IRoute => {
     return this.addRoute("get", url, ...requestHandler);
   }
 
   post = (url: string, ...requestHandler: RequestHandler[]): IRoute => {
-    return this.addRoute('post', url, ...requestHandler);
+    return this.addRoute("post", url, ...requestHandler);
   }
 
   del = (url: string, ...requestHandler: RequestHandler[]): IRoute => {
-    return this.addRoute('delete', url, ...requestHandler);
+    return this.addRoute("delete", url, ...requestHandler);
   }
 
   delete = (url: string, ...requestHandler: RequestHandler[]): IRoute => {
-    return this.addRoute('delete', url, ...requestHandler);
+    return this.addRoute("delete", url, ...requestHandler);
   }
 
   put = (url: string, ...requestHandler: RequestHandler[]): IRoute => {
@@ -64,7 +59,6 @@ export class NodeServer {
     this.use(compression());
     this.use(bodyParser.json());
     this.use(bodyParser.urlencoded({ extended: true }));
-    this.use(flash());
     this.use(lusca.xframe("SAMEORIGIN"));
     this.use(lusca.xssProtection(true));
 
