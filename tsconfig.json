@@ -1,0 +1,37 @@
+{
+  "include": [
+    "src/**/*.ts", "@types/fbgraph.d.ts", "@types/express-flash.d.ts"
+  ],
+  "exclude": [
+    "spec",
+    "test",
+    "node_modules",
+    "src/**/*.test.ts",
+    "src/**/*.spec.ts",
+    "src/**/*.sample.ts",
+    "src/**/sample.ts",
+    "src/**/*.example.ts"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ES6",
+    "module": "CommonJS",
+    "lib": [
+      "es6",
+      "es2017",
+      "dom"
+    ],
+    "jsx": "react",
+    "declaration": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "rootDir": "src",
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "typeRoots": [
+      "@types",
+      "node_modules/@types"
+    ]
+  }
+}
