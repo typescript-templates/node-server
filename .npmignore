@@ -10,6 +10,12 @@ dist/sample.js
 spec/
 docs/
 scripts/
+pnpm-lock.yaml
+.eslintignore
+.eslintrc
+.env*
+.mocharc.json
+rollup.config.js
 .vscode
 .gitignore
 .npmignore
