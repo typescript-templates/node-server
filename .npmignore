@@ -31,7 +31,7 @@ gulpfile.config.js
 gulpfile.js
 .yo-rc.json
 .eslintrc.json
-
+tsconfig.*
 secrets/
 tmp/
 temp/
