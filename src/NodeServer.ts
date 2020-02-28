@@ -97,7 +97,7 @@ export class NodeServer {
     return this.server[method](url, ...requestHandler);
   }
 
-  private ConfigureSession = (sessionStoreFactory: () => session.Store, sessionSecret: string): void => {
+  private ConfigureSession = (sessionStoreFactory: () => session.Store | session.MemoryStore | undefined, sessionSecret: string): void => {
     this.use(session({
       resave: true,
       saveUninitialized: true,
