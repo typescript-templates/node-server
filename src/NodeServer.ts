@@ -1,12 +1,12 @@
 import { IRoute, RequestHandler, ErrorRequestHandler } from "express";
-import { HttpVerbs } from "./HttpVerbs";
+import { HttpVerbs } from "@dotup/dotup-ts-types";
 import { IAppRouter } from "./IAppRouter";
 import { ServerMethods } from "./ServerMethods";
 import compression from "compression";  // compresses requests
 import bodyParser from "body-parser";
 import lusca from "lusca";
 import session from "express-session";
-import { DefaultErrorHandler } from "./DefaultErrorHandler";
+import { DefaultErrorHandler } from "./errors/DefaultErrorHandler";
 
 export class NodeServer {
   private server: ServerMethods;

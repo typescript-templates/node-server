@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { IAppRouter } from "./IAppRouter";
 import { IRouter, RequestHandler, Router as ExpressRouter } from "express";
-import { RouterError } from "./RouterError";
-import { HttpVerbs } from "./HttpVerbs";
+import { RouterError } from "./errors/RouterError";
+import { HttpVerbs } from "@dotup/dotup-ts-types";
 
 export class AppRouter implements IAppRouter {
   readonly ControllerName: string;

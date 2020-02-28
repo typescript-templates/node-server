@@ -1,4 +1,4 @@
-import { HttpStatusCode } from "./HttpStatusCodes";
+import { HttpStatusCode } from "@dotup/dotup-ts-types";
 import { Request, Response } from "express-serve-static-core";
 import { NextFunction } from "express";
 

@@ -1,5 +1,5 @@
 // import { Server as HttpServer } from "http";
-import { HttpVerbs } from "./HttpVerbs";
+import { HttpVerbs } from "@dotup/dotup-ts-types";
 import { RequestHandler } from "express";
 
 export type x = HttpVerbs & string;

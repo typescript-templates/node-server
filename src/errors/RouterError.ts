@@ -1,7 +1,7 @@
-import { CustomError } from "./utils/CustomError";
-import { ErrorCodes } from "./utils/ErrorCodes";
+import { CustomError } from "@dotup/dotup-ts-types";
+import { ErrorCodes } from "./ErrorCodes";
 
-export class RouterError extends CustomError {
+export class RouterError extends CustomError<ErrorCodes> {
   private constructor(message: string, code: ErrorCodes) {
     super(message, code);
     this.name = "RouterError";
