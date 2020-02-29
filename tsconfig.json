@@ -1,6 +1,6 @@
 {
   "include": [
-    "src/**/*.ts", "@types/fbgraph.d.ts", "@types/express-flash.d.ts"
+    "src/**/*.ts"
   ],
   "exclude": [
     "spec",

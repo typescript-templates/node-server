@@ -1,4 +1,4 @@
-import { IRoute, RequestHandler, ErrorRequestHandler } from "express";
+import { IRoute, RequestHandler, ErrorRequestHandler } from "express-serve-static-core";
 import { HttpVerbs } from "@dotup/dotup-ts-types";
 import { IAppRouter } from "./IAppRouter";
 import { ServerMethods } from "./ServerMethods";
@@ -53,7 +53,7 @@ export class NodeServer {
     this.server.use(...requestHandler);
   }
 
-  async initialize(server: ServerMethods, sessionStoreFactory: () => session.Store, sessionSecret: string): Promise<void> {
+  async initialize(server: ServerMethods, sessionStoreFactory: () => session.Store | session.MemoryStore | undefined, sessionSecret: string): Promise<void> {
     this.server = server;
 
     this.use(compression());
@@ -85,7 +85,6 @@ export class NodeServer {
       }
     }
 
-    this.server.use(DefaultErrorHandler);
   }
 
   start = (port: number): void => {
