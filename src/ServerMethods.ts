@@ -2,8 +2,6 @@
 import { HttpVerbs } from "@dotup/dotup-ts-types";
 import { RequestHandler } from "express";
 
-export type x = HttpVerbs & string;
-
 export type IHttpController = IHttpControllerMethods;
 export type IHttpServer = IHttpServerMethods & IHttpServerListner;
 

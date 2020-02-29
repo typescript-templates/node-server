@@ -19,7 +19,7 @@ export class AppRouter implements IAppRouter {
     this.subRouter = [];
   }
 
-  initialize(): void {
+  initialize(...args: any[]): void {
     throw RouterError.RouterNotInitialized();
   }
 

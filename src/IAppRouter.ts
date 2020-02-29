@@ -5,7 +5,7 @@ export interface IAppRouter {
   readonly url: string;
   parentUrl?: string;
   Router: IRouter;
-  initialize(): void;
+  initialize(...args: any): void;
   initializeSubRouter(): void;
   getUrl(): string;
   subRouter?: IAppRouter[];
