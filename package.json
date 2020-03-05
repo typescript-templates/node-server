@@ -1,5 +1,5 @@
 {
-  "version": "0.2.0",
+  "version": "0.2.1",
   "name": "@typescript-templates/node-server",
   "main": "src/index.ts",
   "types": "src/index.ts",
