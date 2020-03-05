@@ -8,6 +8,8 @@ import lusca from "lusca";
 import session from "express-session";
 import { DefaultErrorHandler } from "./errors/DefaultErrorHandler";
 
+export type SessionStoreFactory = () => session.Store | session.MemoryStore | undefined;
+
 export class NodeServer {
   private server: ServerMethods;
   get = (url: string, ...requestHandler: RequestHandler[]): IRoute => {
@@ -53,7 +55,7 @@ export class NodeServer {
     this.server.use(...requestHandler);
   }
 
-  async initialize(server: ServerMethods, sessionStoreFactory: () => session.Store | session.MemoryStore | undefined, sessionSecret: string): Promise<void> {
+  async initialize(server: ServerMethods, sessionStoreFactory?: SessionStoreFactory, sessionSecret?: string): Promise<void> {
     this.server = server;
 
     this.use(compression());
@@ -62,7 +64,10 @@ export class NodeServer {
     this.use(lusca.xframe("SAMEORIGIN"));
     this.use(lusca.xssProtection(true));
 
-    this.ConfigureSession(sessionStoreFactory, sessionSecret);
+    if(sessionStoreFactory){
+      const sercret = sessionSecret ? sessionSecret: "dlif7yccv876ZZpommZffS56e";
+      this.ConfigureSession(sessionStoreFactory, sercret);
+    }
 
     // for (const route of routes) {
     //   route.initialize();
