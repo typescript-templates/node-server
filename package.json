@@ -14,7 +14,7 @@
     "build-test": "npm run clean-dist && tsc -p tsconfig.json",
     "build-esnext": "npm run clean-dist && tsc -p tsconfig.esnext.json",
     "build-r": "npm run clean-dist && rollup -c",
-    "build": "npm run clean-dist && npm run lint && npm run build-gulp && npm run copy-static-assets",
+    "build": "npm run lint && npm run build-r && npm run copy-static-assets",
     "build-tsc": "tsc",
     "release": "npm run build-ts && git push && npm run publish-pnpm",
     "release-esnext": "npm run build-esnext && npm run test && git push && npm run gh-pages && npm run publish-pnpm",
