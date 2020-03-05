@@ -8,7 +8,7 @@ export async function StartServer<T extends NodeServer>(factory: Constructor<T>,
 export async function StartServer<T extends NodeServer>(instance: T, routes: IAppRouter[], port: number): Promise<T>;
 export async function StartServer<T extends NodeServer>(factoryOrInstance: Constructor<T> | T, routes: IAppRouter[], port: number): Promise<T> {
   const server = factoryOrInstance instanceof NodeServer ? factoryOrInstance : new factoryOrInstance();
-  await server.initialize(express())
+  await server.initialize(express());
   server.assignRoutes(routes);
   server.start(port);
   return server;
