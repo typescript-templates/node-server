@@ -4,7 +4,7 @@ import { IRouter } from "express";
 export interface IAppRouter {
   readonly url: string;
   parentUrl?: string;
-  Router: IRouter;
+  Router: IRouter<any>;
   initialize(...args: any): void;
   initializeSubRouter(): void;
   getUrl(): string;

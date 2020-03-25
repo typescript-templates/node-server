@@ -1,6 +1,6 @@
 // import { Server as HttpServer } from "http";
 import { HttpVerbs } from "@dotup/dotup-ts-types";
-import { RequestHandler } from "express";
+import { IRoute, RequestHandler, ErrorRequestHandler } from "express";
 
 export type IHttpController = IHttpControllerMethods;
 export type IHttpServer = IHttpServerMethods & IHttpServerListner;

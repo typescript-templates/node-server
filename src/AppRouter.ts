@@ -8,7 +8,7 @@ export class AppRouter implements IAppRouter {
   readonly ControllerName: string;
   readonly url: string;
   parentUrl: string;
-  Router: IRouter;
+  Router: IRouter<any>;
   subRouter: IAppRouter[];
 
   constructor(name: string, url?: string) {

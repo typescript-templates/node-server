@@ -21,6 +21,11 @@
       "es6",
       "dom"
     ],
+    "paths": {
+      "*": [
+        "node_modules/*"
+      ]
+    },
     "declaration": true,
     "sourceMap": true,
     "outDir": "dist",
@@ -28,10 +33,6 @@
     "strict": true,
     "skipLibCheck": true,
     "strictPropertyInitialization": false,
-    "esModuleInterop": true,
-    "typeRoots": [
-      "@types",
-      "node_modules/@types"
-    ]
+    "esModuleInterop": true
   }
 }

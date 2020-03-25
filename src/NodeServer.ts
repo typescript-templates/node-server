@@ -1,4 +1,4 @@
-import { IRoute, RequestHandler, ErrorRequestHandler } from "express-serve-static-core";
+import { IRoute, RequestHandler, ErrorRequestHandler } from "express";
 import { HttpVerbs } from "@dotup/dotup-ts-types";
 import { IAppRouter } from "./IAppRouter";
 import { ServerMethods } from "./ServerMethods";

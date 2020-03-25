@@ -2,7 +2,7 @@ import express from "express";
 import { NodeServer } from "./NodeServer";
 import { IAppRouter } from "./IAppRouter";
 
-type Constructor<T extends {} = {}> = new (...args: any[])=> T;
+type Constructor<T extends {} = {}> = new (...args: any[]) => T;
 
 export async function StartServer<T extends NodeServer>(factory: Constructor<T>, routes: IAppRouter[], port: number): Promise<T>;
 export async function StartServer<T extends NodeServer>(instance: T, routes: IAppRouter[], port: number): Promise<T>;
